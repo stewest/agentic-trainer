@@ -177,3 +177,63 @@ If you encounter any issues or have questions:
 ---
 
 **Happy AI Chatting! 🤖✨**
+
+# agentic-trainer
+
+Here's what Jarvis AI app does and how it works with Ollama:
+
+##What the App Does
+Jarvis AI is a local AI chat application with CSV training capabilities that runs entirely on your local machine using Ollama. It has two main features:
+
+1. AI Chat Interface (AIAgent.tsx)
+Connects to your local Ollama instance running on port 11434
+Allows you to chat with various local LLM models (Llama 3.2, Mistral, Code Llama)
+Provides a clean chat interface with message history
+No data leaves your machine - everything is processed locally
+
+2. CSV Training Interface (CSVTraining.tsx)
+Upload CSV files with question-answer pairs for training
+Parse and validate CSV format (requires "question" and "answer" columns)
+Process training data through the selected model
+Download CSV templates to get started
+How It Works with Ollama
+The app uses the official ollama npm package to communicate with your local Ollama server:
+   `const ollama = new Ollama({
+  host: 'http://localhost:11434'
+});`
+
+When you send a message, it calls:
+    `const response = await ollama.chat({
+  model: modelName,
+  messages: [{ role: 'user', content: inputValue }]
+});`
+
+
+CSV Storage vs. Reference
+
+The CSV data is NOT stored permanently in the app. Here's what actually happens:
+
+Upload & Parse: When you upload a CSV, it's parsed in the browser and stored temporarily in React state (trainingData)
+Training Process: The app goes through each Q&A pair and:
+Sends the question to Ollama
+Gets the model's response
+Compares it with the expected answer
+Logs the results to the console
+No Persistent Storage: The CSV data exists only in memory during the session and is lost when you refresh the page
+
+Model Testing: It's essentially testing how well your current model handles the training examples, not actually fine-tuning the model
+
+Current Limitations
+The current implementation is more of a model testing tool rather than true fine-tuning:
+It doesn't actually modify the underlying model
+It doesn't store training data persistently
+It's testing the model's responses against your examples
+The "training" is really just validation/testing
+What You'd Need for True Fine-tuning
+To actually fine-tune models with your CSV data, you'd need:
+Ollama's fine-tuning capabilities (if available)
+Persistent storage for training data
+Model modification/creation features
+Training data management
+Your app is a great foundation for testing how well local models handle specific Q&A patterns, but it's not currently doing actual model training or fine-tuning.
+
