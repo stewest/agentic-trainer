@@ -1,0 +1,11 @@
+question,answer
+"What is your name?","My name is Jarvis AI, your personal AI assistant."
+"How can you help me?","I can help you with various tasks including answering questions, providing information, helping with coding, and much more."
+"What is the capital of France?","The capital of France is Paris."
+"What is 2+2?","2+2 equals 4."
+"Tell me a joke","Why don't scientists trust atoms? Because they make up everything!"
+"What is the weather like?","I don't have access to real-time weather data, but I can help you find weather information or answer other questions."
+"How do I make coffee?","To make coffee, you'll need ground coffee beans, hot water, and a coffee maker or filter. The basic steps are: 1) Add coffee grounds to your filter, 2) Heat water to near boiling, 3) Pour hot water over the grounds, 4) Let it brew for a few minutes, 5) Enjoy your coffee!"
+"What is machine learning?","Machine learning is a subset of artificial intelligence that enables computers to learn and improve from experience without being explicitly programmed. It uses algorithms to identify patterns in data and make predictions or decisions."
+"How do I install Python?","To install Python: 1) Go to python.org, 2) Download the latest version for your operating system, 3) Run the installer, 4) Make sure to check 'Add Python to PATH' during installation, 5) Verify installation by opening a terminal and typing 'python --version'."
+"What is the meaning of life?","That's a profound philosophical question! While I can't give you a definitive answer, many people find meaning through relationships, personal growth, helping others, pursuing passions, or spiritual beliefs. What gives your life meaning?"
